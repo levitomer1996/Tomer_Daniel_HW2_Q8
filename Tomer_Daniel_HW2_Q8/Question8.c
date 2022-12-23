@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define SIZE 4
+#include "Question8.h"
 int numOnesInRow[SIZE];
 int numRowsOfDNF;
 
@@ -19,14 +19,14 @@ void init(int n, int A[][SIZE]) {
 
 void flip(int A[][SIZE], int i, int j) {
 	if (A[i][j] == 0) {              
-		A[i][j] == 1;
+		A[i][j] = 1;
 		numOnesInRow[i]++;
 		if (numOnesInRow[i] == SIZE) {
 			numRowsOfDNF++;
 		}
 	}
 	else {
-		A[i][j] == 0;
+		A[i][j] = 0;
 		if (numOnesInRow[i] == SIZE) {
 			numRowsOfDNF--;
 		}
